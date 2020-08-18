@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';  //importing library for flutter to build designs
+
+void main() {                            //programs starts from main
+  runApp(                                //runApp contains widgets which makes possible to add graphical contents this uses entire screen
+    Center(                              //center widgets aligns everything to center . even its child
+      child: Text(
+          'This is flutter basic layout where text is displayed on center',
+          textDirection: TextDirection.ltr),  //Some more properties can be added on Text widgets like text dir form left to right
+    ),
+  );
+}
+
+
+//press flutter run on termial to execute program
+//to run on browser flutter run -d chrome 
