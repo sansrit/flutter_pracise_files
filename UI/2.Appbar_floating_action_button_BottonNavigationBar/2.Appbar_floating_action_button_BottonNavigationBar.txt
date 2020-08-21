@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(FirstPage()); //passing class name to runApp function.
+
+class FirstPage extends StatelessWidget {
+  //class name must start on capital letter,
+  //stateless widget is created
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(                  //MaterialApp is required to create UI everything should be under it.
+        debugShowCheckedModeBanner: false,  //removes the debugger logo on UI
+        home: Scaffold(                     //Inside material App under home Scaffold provides area to create and add design.
+          appBar: AppBar(           
+            title: Text('स्वागतम्'),
+            backgroundColor: Colors.purple,
+          ),
+          body: Center(                         //Scafffold mailnly contains appbar, body, floating action botton , bottom nav bar and many more
+            child: Container(
+              child: Text(
+                'बधाई छ तपाईं केहि सिक्दै हुनुहुन्छ।',
+                textScaleFactor: 2,
+              ),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(  //Floating action botton  has child widget which requires icon and . event handler on pressed is mandatory
+            child: Icon(Icons.camera),
+            elevation: 40,
+            backgroundColor: Colors.blue,
+            onPressed: () {},
+          ),
+          bottomNavigationBar: BottomNavigationBar(  //provides beautiful navigation on button for faster switching on elements
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.image),
+                title: Text('फोटोहरु'),
+              ),
+              BottomNavigationBarItem(                //creating list item for many elements for bottom navigations.
+                icon: Icon(Icons.filter),
+                title: Text('प्रभावहरू'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite),
+                title: Text('मनपर्ने'),
+              ),
+            ],
+          ),
+        ));
+  }
+}
